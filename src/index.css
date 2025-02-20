@@ -20,3 +20,7 @@
 .nav-link {
   @apply font-satoshi flex w-[206px] items-center gap-3 py-[10px] pl-3 text-xs leading-[18px] tracking-normal;
 }
+
+.date-text {
+  @apply font-satoshi text-[11px] text-[#121212];
+}
