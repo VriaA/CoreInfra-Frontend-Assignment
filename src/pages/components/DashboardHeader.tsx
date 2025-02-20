@@ -31,6 +31,7 @@ export default function DashboardHeader() {
             type="text"
             className="font-satoshi w-full text-start text-xs leading-[18px] font-normal text-[#344054] outline-none"
             placeholder="Search"
+            aria-label="Search"
           />
         </div>
 
