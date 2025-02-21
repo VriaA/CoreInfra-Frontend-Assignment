@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-import tickStyle from "../../constants/tickStyle";
+import tickStyle from "../../../constants/tickStyle";
 
 interface WeeklyIncomeData {
   day: string;

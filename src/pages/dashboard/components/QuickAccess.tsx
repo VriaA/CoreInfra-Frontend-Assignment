@@ -1,5 +1,5 @@
 import QuickAction from "./QuickAction";
-import quickActions from "../../constants/quickActions";
+import quickActions from "../../../constants/quickActions";
 
 export default function QuickAccess() {
   return (
@@ -8,10 +8,10 @@ export default function QuickAccess() {
         Your Quick Access
       </h2>
       <nav aria-label="Quick access actions">
-        <ul className="flex w-full flex-col flex-wrap gap-2 sm:flex-row lg:flex-nowrap">
+        <ul className="flex w-full flex-col flex-wrap gap-2 sm:flex-row xl:flex-nowrap">
           {quickActions.map((action) => (
             <li
-              className="w-full sm:w-[calc(50%-4px)] lg:w-full"
+              className="w-full sm:w-[calc(50%-4px)] xl:w-full"
               key={action.action}>
               <QuickAction
                 action={action.action}

@@ -1,12 +1,12 @@
-import { analyticsCards } from "../../constants/analyticsData";
+import { analyticsCards } from "../../../constants/analyticsData";
 import AnalyticsCard from "./AnalyticsCard";
-import { weeklyIncomeData } from "../../constants/WeeklyIncomeData";
+import { weeklyIncomeData } from "../../../constants/WeeklyIncomeData";
 import CardStatusDistribution from "./CardStatusDistribution";
-import { cardStatusData } from "../../constants/cardStatusData";
+import { cardStatusData } from "../../../constants/cardStatusData";
 import WeeklyIncome from "./WeeklyIncome";
 import MonthlyIssuance from "./MonthlyIssuance";
-import { monthlyData } from "../../constants/MonthlyIssuanceData";
-import RecentCardRequests from "../../components/RecentCardRequests";
+import { monthlyData } from "../../../constants/MonthlyIssuanceData";
+import RecentCardRequests from "../../../components/RecentCardRequests";
 
 export default function Analytics() {
   return (

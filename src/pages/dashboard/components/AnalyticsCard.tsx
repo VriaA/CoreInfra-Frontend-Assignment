@@ -1,10 +1,10 @@
-import { AnalyticsCard as AnalyticsCardType } from "../../constants/analyticsData";
-import ArrowNarrowUpRight from "../../assets/icons/arrow_narrow_up_right.svg?react";
-import AlertCircle from "../../assets/icons/alert_circle.svg?react";
-import CreditCardCheck from "../../assets/icons/credit_card_check.svg?react";
-import CreditCardEdit from "../../assets/icons/credit_card_edit.svg?react";
-import BankNote from "../../assets/icons/bank_note.svg?react";
-import HourGlass from "../../assets/icons/hourglass.svg?react";
+import { AnalyticsCard as AnalyticsCardType } from "../../../constants/analyticsData";
+import ArrowNarrowUpRight from "../../../assets/icons/arrow_narrow_up_right.svg?react";
+import AlertCircle from "../../../assets/icons/alert_circle.svg?react";
+import CreditCardCheck from "../../../assets/icons/credit_card_check.svg?react";
+import CreditCardEdit from "../../../assets/icons/credit_card_edit.svg?react";
+import BankNote from "../../../assets/icons/bank_note.svg?react";
+import HourGlass from "../../../assets/icons/hourglass.svg?react";
 
 interface AnalyticsCardProps extends AnalyticsCardType {}
 const icons = {

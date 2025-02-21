@@ -1,5 +1,5 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
-import { CardStatus } from "../../constants/cardStatusData";
+import { CardStatus } from "../../../constants/cardStatusData";
 
 interface CardStatusDistributionProps {
   data: CardStatus[];

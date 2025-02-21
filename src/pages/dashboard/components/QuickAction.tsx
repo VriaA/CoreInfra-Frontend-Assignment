@@ -1,5 +1,5 @@
 import React from "react";
-import ChevronRight from "../../assets/icons/chevron_right.svg?react";
+import ChevronRight from "../../../assets/icons/chevron_right.svg?react";
 import { Link } from "react-router";
 interface CardActionProps {
   action: string;

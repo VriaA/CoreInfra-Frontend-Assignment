@@ -1,11 +1,11 @@
 import { Link } from "react-router";
-import HomeIcon from "../../assets/icons/home.svg?react";
-import SearchIcon from "../../assets/icons/search.svg?react";
-import BellIcon from "../../assets/icons/bell.svg?react";
-import AvatarIcon from "../../assets/icons/avatar.svg?react";
-import MenuIcon from "../../assets/icons/menu.svg?react";
+import HomeIcon from "../../../assets/icons/home.svg?react";
+import SearchIcon from "../../../assets/icons/search.svg?react";
+import BellIcon from "../../../assets/icons/bell.svg?react";
+import AvatarIcon from "../../../assets/icons/avatar.svg?react";
+import MenuIcon from "../../../assets/icons/menu.svg?react";
 import { useContext } from "react";
-import { AppContext, AppContextValues } from "../../contexts/AppContext";
+import { AppContext, AppContextValues } from "../../../contexts/AppContext";
 
 export default function DashboardHeader() {
   const { setIsNavBarOpen } = useContext(AppContext) as AppContextValues;

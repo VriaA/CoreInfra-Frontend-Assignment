@@ -1,5 +1,5 @@
-import CalendarIcon from "../../assets/icons/calendar.svg?react";
-import DateDivider from "../../assets/date_divider.svg?react";
+import CalendarIcon from "../../../assets/icons/calendar.svg?react";
+import DateDivider from "../../../assets/date_divider.svg?react";
 export default function UserWelcomeBanner() {
   return (
     <div className="flex w-full flex-col justify-between gap-[13px] sm:flex-row">
