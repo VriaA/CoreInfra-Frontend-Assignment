@@ -43,8 +43,8 @@ export default function NavBar() {
             </h2>
 
             <ul className="ml-[11px] flex flex-col gap-1">
-              {navBarMenuItems.map((item) => (
-                <li key={item.path}>
+              {navBarMenuItems.map((item, index) => (
+                <li key={`nav-${index + 1}`}>
                   <NavBarLink {...item} />
                 </li>
               ))}
