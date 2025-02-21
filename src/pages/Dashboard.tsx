@@ -1,6 +1,7 @@
 import DashboardHeader from "./components/DashboardHeader";
 import UserWelcomeBanner from "./components/UserWelcomeBanner";
 import QuickAccess from "./components/QuickAccess";
+import Analytics from "./components/Analytics";
 
 export default function Dashboard() {
   return (
@@ -9,6 +10,7 @@ export default function Dashboard() {
       <main className="px-5 pt-2 pb-5">
         <UserWelcomeBanner />
         <QuickAccess />
+        <Analytics />
       </main>
     </div>
   );
