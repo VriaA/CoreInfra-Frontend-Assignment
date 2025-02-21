@@ -1,13 +1,16 @@
 import NavBar from "../components/NavBar";
 import { Outlet } from "react-router";
+import AppContextProvider from "../contexts/AppContext";
 
 export default function AppLayout() {
   return (
-    <div className="flex">
-      <NavBar />
-      <div className="flex-1">
-        <Outlet />
+    <AppContextProvider>
+      <div className="flex">
+        <NavBar />
+        <div className="flex-1">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </AppContextProvider>
   );
 }

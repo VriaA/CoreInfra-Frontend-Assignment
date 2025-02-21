@@ -1,4 +1,8 @@
 @import "tailwindcss";
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #bebebe transparent;
+}
 
 @font-face {
   font-family: "Satoshi";
