@@ -20,7 +20,7 @@ export default function DashboardHeader() {
       </Link>
 
       <div className="flex h-10 items-center gap-4">
-        <div className="flex w-[214px] items-center gap-2 rounded-[98px] border border-[#d0d5dd] px-[14px] py-2 focus-within:outline">
+        <div className="flex w-[214px] items-center gap-2 rounded-[98px] border border-[#d0d5dd] px-[14px] py-2 shadow-[0px_15.68px_31.36px_rgba(0,0,0,0.05)] focus-within:outline">
           <SearchIcon
             width={16}
             height={16}
