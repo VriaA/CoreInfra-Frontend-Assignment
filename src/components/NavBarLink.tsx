@@ -16,7 +16,8 @@ export default function NavBarLink({
   const { pathname } = useLocation();
 
   useEffect(() => {
-    setIsActive(pathname === path);
+    const isActive = path === "/" ? pathname === path : pathname.includes(path);
+    setIsActive(isActive);
   }, [pathname, path]);
 
   const activeStyle =
@@ -30,14 +31,13 @@ export default function NavBarLink({
     <Link
       to={path}
       className={`nav-link ${className} ${isActive ? activeStyle : "font-normal text-black/50"}`}>
-      {Icon && (
-        <Icon
-          width={16}
-          height={16}
-          className={isActive ? iconActiveStyle : iconInActiveStyle}
-          aria-hidden={true}
-        />
-      )}
+      <Icon
+        width={16}
+        height={16}
+        className={isActive ? iconActiveStyle : iconInActiveStyle}
+        aria-hidden={true}
+      />
+
       <span>{name}</span>
     </Link>
   );
