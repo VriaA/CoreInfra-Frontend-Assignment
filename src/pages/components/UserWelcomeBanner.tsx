@@ -2,7 +2,7 @@ import CalendarIcon from "../../assets/icons/calendar.svg?react";
 import DateDivider from "../../assets/date_divider.svg?react";
 export default function UserWelcomeBanner() {
   return (
-    <div className="flex w-full justify-between">
+    <div className="flex w-full flex-col justify-between gap-[13px] sm:flex-row">
       <div>
         <h1 className="font-satoshi mb-[6px] text-lg leading-6 font-bold tracking-normal text-[#121212]">
           Hi Nazeer, what would you like to do today?
