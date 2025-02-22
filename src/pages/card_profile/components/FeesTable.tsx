@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PlusIcon from "../../../assets/icons/plus.svg?react";
-import Modal from "../../../components/Modal/Modal";
+import Modal from "../../../components/Modal";
 import AddFeeModal from "./AddFeeModal";
 
 interface FeesTableProps {
