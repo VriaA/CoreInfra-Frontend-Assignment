@@ -18,7 +18,7 @@ export default function ProfileDetailsForm({
   setFormData,
 }: ProfileDetailsFormProps) {
   return (
-    <form className="w-full rounded-[10px] border border-[#e2e2e2] bg-white p-4 pb-7">
+    <div className="w-full rounded-[10px] border border-[#e2e2e2] bg-white p-4 pb-7">
       <fieldset>
         <legend className="font-satoshi mb-6 text-[18px] leading-[18px] font-medium text-[#121212]">
           Profile Details
@@ -98,6 +98,6 @@ export default function ProfileDetailsForm({
           />
         </div>
       </fieldset>
-    </form>
+    </div>
   );
 }

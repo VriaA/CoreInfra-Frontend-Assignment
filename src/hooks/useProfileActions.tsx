@@ -6,7 +6,7 @@ import { useCallback, useContext, useEffect, useState, FormEvent } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 type UseProfileAction = {
-  handleEditButtonClick: () => void;
+  handleEditButtonClick: (event: FormEvent) => void;
   handleCreateButtonClick: (event: FormEvent) => void;
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -55,7 +55,8 @@ export default function useProfileActions(): UseProfileAction {
     [setFormData]
   );
 
-  function handleEditButtonClick() {
+  function handleEditButtonClick(event: FormEvent) {
+    event.preventDefault();
     setCardProfiles((prevProfiles: CardProfileData[]) => {
       const updatedProfiles = prevProfiles.map((profile) => {
         if (profile.id === id) {

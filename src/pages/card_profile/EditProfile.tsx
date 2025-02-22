@@ -47,7 +47,9 @@ export default function EditProfile() {
           title="Edit Profile"
           description="Fill in profile details and add card fee."
         />
-        <div className="mt-6">
+        <form
+          className="mt-6"
+          onSubmit={handleEditButtonClick}>
           <ProfileDetailsForm
             cardProfile={cardProfileToEdit}
             formData={formData}
@@ -56,12 +58,11 @@ export default function EditProfile() {
           />
           <FeesTable />
           <button
-            type="button"
-            onClick={handleEditButtonClick}
+            type="submit"
             className="fee-btn-primary button-default mt-[35px] w-[293px]">
             Edit Profile
           </button>
-        </div>
+        </form>
       </main>
     </>
   );

@@ -43,7 +43,9 @@ export default function CreateProfile() {
           title="Create Profile"
           description="Fill in profile details and add card fee."
         />
-        <div className="mt-6">
+        <form
+          className="mt-6"
+          onSubmit={handleCreateButtonClick}>
           <ProfileDetailsForm
             formData={formData}
             handleInputChange={handleInputChange}
@@ -51,12 +53,11 @@ export default function CreateProfile() {
           />
           <FeesTable />
           <button
-            onClick={handleCreateButtonClick}
-            type="button"
+            type="submit"
             className="fee-btn-primary button-default mt-[35px] w-[293px]">
             Create Profile
           </button>
-        </div>
+        </form>
       </main>
     </>
   );
