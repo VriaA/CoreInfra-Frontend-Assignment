@@ -1,6 +1,6 @@
 import StatusBadge from "./StatusBadge";
 import MaximizeIcon from "../assets/icons/maximize.svg?react";
-import { cardRequestData } from "../constants/cardRequestData";
+import { recentCardRequests } from "../constants/recentCardRequests";
 import { Link } from "react-router";
 
 export default function RecentCardRequests() {
@@ -33,9 +33,11 @@ export default function RecentCardRequests() {
           </tr>
         </thead>
         <tbody>
-          {cardRequestData.map((request, index) => {
+          {recentCardRequests.map((request, index) => {
             const border =
-              index === cardRequestData.length - 1 ? "border-b-0" : "border-b";
+              index === recentCardRequests.length - 1
+                ? "border-b-0"
+                : "border-b";
             return (
               <tr key={index}>
                 <td
