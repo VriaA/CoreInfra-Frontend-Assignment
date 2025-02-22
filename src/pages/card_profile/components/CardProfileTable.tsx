@@ -44,7 +44,7 @@ export default function CardProfileTable({ data }: CardProfileTableProps) {
             <tr
               key={index}
               className="border-b border-[#eaecf0]">
-              <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
+              <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-start text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
                 {row.cardName}
               </td>
               <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
