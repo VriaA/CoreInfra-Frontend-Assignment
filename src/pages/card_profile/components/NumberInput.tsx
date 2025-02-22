@@ -48,7 +48,7 @@ export default function NumberInput({
             onClick={() =>
               setFormData((prev: any) => ({
                 ...prev,
-                [inputName]: prev[inputName] + 1,
+                [inputName]: Number(prev[inputName]) + 1,
               }))
             }
             className="-mb-[5.5px] flex cursor-pointer flex-col items-center justify-center">
@@ -63,7 +63,7 @@ export default function NumberInput({
             onClick={() =>
               setFormData((prev: any) => ({
                 ...prev,
-                [inputName]: Math.max(0, prev[inputName] - 1),
+                [inputName]: Math.max(0, Number(prev[inputName]) - 1),
               }))
             }
             className="-mt-[5.5px] flex cursor-pointer flex-col items-center justify-center">
