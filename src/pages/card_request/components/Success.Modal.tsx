@@ -7,7 +7,7 @@ export interface SuccessModalProps {
 
 export function SuccessModal({ action, message }: SuccessModalProps) {
   return (
-    <section className="shadow-modal absolute inset-0 m-auto h-fit w-full max-w-[400px] rounded-xl bg-white p-6">
+    <section className="shadow-success-modal absolute inset-0 m-auto h-fit w-full max-w-[400px] rounded-xl bg-white p-6">
       <IconSquare>
         <CheckCircleIcon />
       </IconSquare>

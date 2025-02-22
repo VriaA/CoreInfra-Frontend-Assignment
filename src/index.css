@@ -29,6 +29,7 @@ input[type="number"]::-webkit-outer-spin-button {
   --font-satoshi:
     "Satoshi", "system-ui", "-apple-system", "BlinkMacSystemFont", "Arial",
     "sans-serif";
+  --shadow-success-modal: "0 20px 24px -4px 10182808, 0 8px 8px -4px #10182803";
 }
 
 .nav-link {
