@@ -38,7 +38,7 @@ export default function TextInput({
         value={formData[inputName]}
         onChange={handleInputChange}
         className={`font-satoshi h-fit w-full rounded-lg border border-[#d0d5dd] bg-white text-base leading-6 font-normal text-[#667085] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] outline-none placeholder:text-[#667085] ${inputStyle}`}
-        required
+        {...(isRequired && { required: true })}
         {...(pattern && { pattern })}
         {...(maxLength && { maxLength })}
       />

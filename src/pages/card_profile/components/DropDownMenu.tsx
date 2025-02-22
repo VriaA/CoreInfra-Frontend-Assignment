@@ -29,6 +29,7 @@ export default function DropDownMenu({
           name={menuName}
           value={formData[menuName]}
           onChange={handleInputChange}
+          {...(isRequired && { required: true })}
           className="font-satoshi w-full cursor-pointer appearance-none rounded-lg px-3.5 py-2.5 text-base leading-6 font-normal text-[#667085] outline-none">
           {options.map((option) => (
             <option
