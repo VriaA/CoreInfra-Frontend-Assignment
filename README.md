@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+# CoreInfra Frontend Assignment
+This project is a take-home assignment based on the provided Figma design: [Figma Link](https://www.figma.com/design/kxTFknUuQ1J0xiMZKoFmiQ/LAPO-Web-App?node-id=524-10429&t=m2SgNUsprjLS0k80-1).
+#### Live Demo: https://core-infra-frontend-assignment-oyelola-victoria.vercel.app
+![localhost_5173_ (1)](https://github.com/user-attachments/assets/8efe3eb8-00c7-423f-b065-e08508585df6)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Key Screens
+- **Dashboard** – Displays card-related information. 
+- **Card Request Flow** – Allows users to request a new card.
+- **Card Profile Flow** – Shows details of an issued card.
+### Requirements
+✅ Implement the screens based on the Figma design.
 
-Currently, two official plugins are available:
+✅ Ensure responsiveness and UI consistency.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ Bonus: Add smooth UX interactions and transitions.
+ 
+### Technologies Used
+1. **React**  – Component-based architecture
+2. **React Router**  – Navigation and routing
+3. **Tailwind CSS**  – Utility-first styling
+4. **Recharts** – Data visualization
+5. **UUID** – Unique ID generation
+6. **TypeScript** – Type safety in development
 
-## Expanding the ESLint configuration
+### 🏗  Project Structure
+This project follows a structured folder organization for maintainability:
+- **Pages/** - components for each page
+- **components/** – Reusable UI components
+- **hooks/** – Custom hooks for reusable logic
+- **context/** – Global state management using React Context API
+- **layouts/** – Shared layouts like headers and sidebars
+- **public/** – Static assets (fonts, and constants)
+- **Routing** – Uses React Router for navigation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
+Follow these instructions to set up the project locally on your machine.
+### Prerequisites
+- Node.js 
+- npm or yarn
 
-- Configure the top-level `parserOptions` property like this:
+#### Installation
+1. Clone the Repository
+   ```bash
+    git clone https://github.com/VriaA/CoreInfra-Frontend-Assignment.git
+   ```
+2. ##### Install Dependencies
+   ###### Using npm:
+      ``` bash
+      npm install
+      ```
+   ##### Or using yarn:
+      ``` bash
+      yarn install
+      ```
+3. #### Run the Application
+   ##### Using npm:
+      ``` bash
+      npm run dev
+      ```
+    #### Or using yarn:
+      ``` bash
+      yarn dev
+      ```
+4. #### Open in Browser
+      The application should be running at http://localhost:5173.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
