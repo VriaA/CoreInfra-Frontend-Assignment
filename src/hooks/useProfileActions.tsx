@@ -2,12 +2,12 @@ import { CardProfileContext } from "../contexts/CardProfileContext";
 import { useParams, useNavigate, useLocation } from "react-router";
 import { CardProfileData } from "../types/card";
 import { ProfileFormData } from "../types/card";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState, FormEvent } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 type UseProfileAction = {
   handleEditButtonClick: () => void;
-  handleCreateButtonClick: () => void;
+  handleCreateButtonClick: (event: FormEvent) => void;
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
@@ -34,11 +34,13 @@ export default function useProfileActions(): UseProfileAction {
   const [formData, setFormData] = useState<ProfileFormData>({
     id: cardProfileToEdit ? cardProfileToEdit.id : "",
     cardName: cardProfileToEdit?.cardName || "",
-    cardScheme: cardProfileToEdit?.cardScheme || "",
+    cardScheme: cardProfileToEdit?.cardScheme || "Mastercard",
     description: cardProfileToEdit?.description || "",
     branchBlacklist: cardProfileToEdit?.branchBlacklist || "",
-    currency: cardProfileToEdit?.currency || "",
-    expiration: cardProfileToEdit?.expiration || 0,
+    currency: cardProfileToEdit?.currency || "NGN",
+    expiration: cardProfileToEdit?.expiration
+      ? Number(cardProfileToEdit?.expiration)
+      : 0,
     binPrefix: cardProfileToEdit?.binPrefix || "",
   });
 
@@ -66,7 +68,8 @@ export default function useProfileActions(): UseProfileAction {
     navigate("/card-profile");
   }
 
-  function handleCreateButtonClick() {
+  function handleCreateButtonClick(event: FormEvent) {
+    event.preventDefault();
     setCardProfiles((prevProfiles: CardProfileData[]) => {
       const newProfileId = uuidv4();
       const date = new Date();

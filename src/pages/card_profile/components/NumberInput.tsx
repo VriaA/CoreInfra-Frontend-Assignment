@@ -37,6 +37,7 @@ export default function NumberInput({
           name={inputName}
           value={formData[inputName]}
           onChange={handleInputChange}
+          min="0"
           className={`font-satoshi w-full rounded-lg border border-[#d0d5dd] bg-white text-base leading-6 font-normal text-[#667085] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] outline-none ${
             inputStyle
           }`}
@@ -48,7 +49,7 @@ export default function NumberInput({
             onClick={() =>
               setFormData((prev: any) => ({
                 ...prev,
-                [inputName]: Number(prev[inputName]) + 1,
+                [inputName]: prev[inputName] + 1,
               }))
             }
             className="-mb-[5.5px] flex cursor-pointer flex-col items-center justify-center">
@@ -63,7 +64,7 @@ export default function NumberInput({
             onClick={() =>
               setFormData((prev: any) => ({
                 ...prev,
-                [inputName]: Math.max(0, Number(prev[inputName]) - 1),
+                [inputName]: prev[inputName] - 1,
               }))
             }
             className="-mt-[5.5px] flex cursor-pointer flex-col items-center justify-center">
