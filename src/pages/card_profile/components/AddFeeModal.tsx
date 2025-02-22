@@ -7,14 +7,8 @@ interface AddFeeModalProps {
 }
 
 export default function AddFeeModal({ onClose }: AddFeeModalProps) {
-  const handleModalClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   return (
-    <div
-      className="m-auto my-7 h-fit w-full rounded-[10px] bg-white p-6 sm:my-[128px] sm:w-fit"
-      onClick={handleModalClick}>
+    <div className="m-auto my-7 h-fit w-full rounded-[10px] bg-white p-6 sm:my-[128px] sm:w-fit">
       <div className="flex w-full items-center gap-4 border-b border-[#EAECF0] pb-[21px]">
         <IconSquare>
           <BoxedPlusIcon />
