@@ -1,51 +1,24 @@
-import { useState } from "react";
-import { FormEvent } from "react";
 import DropDownMenu from "./DropDownMenu";
 import NumberInput from "./NumberInput";
 import TextInput from "./TextInput";
-interface ProfileDetailsFormProps {
-  onSubmit: (data: ProfileFormData, event: FormEvent) => void;
-}
+import { CardProfileData, ProfileFormData } from "../../../types/card";
 
-export interface ProfileFormData {
-  cardName: string;
-  cardScheme: string;
-  description: string;
-  branchBlacklist: string;
-  currency: string;
-  expiration: number;
-  binPrefix: string;
+interface ProfileDetailsFormProps {
+  cardProfile?: CardProfileData;
+  formData: ProfileFormData;
+  handleInputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
+  setFormData: (data: ProfileFormData) => void;
 }
 
 export default function ProfileDetailsForm({
-  onSubmit,
+  formData,
+  handleInputChange,
+  setFormData,
 }: ProfileDetailsFormProps) {
-  const [formData, setFormData] = useState<ProfileFormData>({
-    cardName: "",
-    cardScheme: "Verve",
-    description: "",
-    branchBlacklist: "Head Office",
-    currency: "NGN",
-    expiration: 0,
-    binPrefix: "",
-  });
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   return (
-    <form
-      onSubmit={(e) => {
-        onSubmit(formData, e);
-      }}
-      className="w-full rounded-[10px] border border-[#e2e2e2] bg-white p-4 pb-7">
+    <form className="w-full rounded-[10px] border border-[#e2e2e2] bg-white p-4 pb-7">
       <fieldset>
         <legend className="font-satoshi mb-6 text-[18px] leading-[18px] font-medium text-[#121212]">
           Profile Details
@@ -110,7 +83,7 @@ export default function ProfileDetailsForm({
             label="Currency"
             menuName="currency"
             isRequired={true}
-            options={["NGN"]}
+            options={["NGN", "USD"]}
           />
 
           <DropDownMenu

@@ -1,19 +1,17 @@
 import DeleteIcon from "../../../assets/icons/delete.svg?react";
 import EditIcon from "../../../assets/icons/edit.svg?react";
-
-interface CardProfileData {
-  cardName: string;
-  currency: string;
-  expiration: string;
-  binPrefix: string;
-  dateCreated: string;
-}
+import { CardProfileData } from "../../../types/card";
+import { Link } from "react-router";
 
 interface CardProfileTableProps {
   data: CardProfileData[];
+  deleteCardProfile: (id: string) => void;
 }
 
-export default function CardProfileTable({ data }: CardProfileTableProps) {
+export default function CardProfileTable({
+  data,
+  deleteCardProfile,
+}: CardProfileTableProps) {
   const tableHeaders = [
     "Card Name",
     "Currency",
@@ -40,39 +38,50 @@ export default function CardProfileTable({ data }: CardProfileTableProps) {
           </tr>
         </thead>
         <tbody className="bg-white">
-          {data.map((row, index) => (
-            <tr
-              key={index}
-              className="border-b border-[#eaecf0]">
-              <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-start text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
-                {row.cardName}
-              </td>
-              <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
-                {row.currency}
-              </td>
-              <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
-                {row.expiration}
-              </td>
-              <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
-                {row.binPrefix}
-              </td>
-              <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
-                {row.dateCreated}
-              </td>
-              <td className="flex justify-center gap-1 px-2 py-3">
-                <button
-                  type="button"
-                  className="button-default cursor-pointer rounded p-2 hover:bg-gray-50">
-                  <DeleteIcon />
-                </button>
-                <button
-                  type="button"
-                  className="button-default cursor-pointer rounded p-2 hover:bg-gray-50">
-                  <EditIcon />
-                </button>
+          {data.length === 0 ? (
+            <tr>
+              <td
+                colSpan={tableHeaders.length}
+                className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
+                No data to display.
               </td>
             </tr>
-          ))}
+          ) : (
+            data.map((row) => (
+              <tr
+                key={row.id}
+                className="border-b border-[#eaecf0]">
+                <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-start text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
+                  {row.cardName}
+                </td>
+                <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
+                  {row.currency}
+                </td>
+                <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
+                  {row.expiration} months
+                </td>
+                <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
+                  {row.binPrefix}
+                </td>
+                <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center text-[10px] leading-[18px] font-normal whitespace-nowrap text-[#475467]">
+                  {row.dateCreated}
+                </td>
+                <td className="flex justify-center gap-1 px-2 py-3">
+                  <button
+                    onClick={() => deleteCardProfile(row.id)}
+                    type="button"
+                    className="button-default cursor-pointer rounded p-2 hover:bg-gray-50">
+                    <DeleteIcon />
+                  </button>
+                  <Link
+                    to={`/card-profile/edit/${row.id}`}
+                    className="button-default cursor-pointer rounded p-2 hover:bg-gray-50">
+                    <EditIcon />
+                  </Link>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

@@ -3,9 +3,23 @@ import SectionHeader from "./components/SectionHeader";
 import SearchAndActions from "../../components/SearchAndActions";
 import CardProfileIcon from "../../assets/icons/card_profile.svg?react";
 import CardProfileTable from "./components/CardProfileTable";
-import { cardProfileData } from "../../constants/CardProfileData";
+import { CardProfileContext } from "../../contexts/CardProfileContext";
 import PlusIcon from "../../assets/icons/plus.svg?react";
+import { useCallback, useContext } from "react";
+import { CardProfileData } from "../../types/card";
+
 export default function CardProfile() {
+  const { cardProfiles, setCardProfiles } = useContext(CardProfileContext);
+
+  const deleteCardProfile = useCallback(
+    (id: string) => {
+      setCardProfiles((prevProfiles: CardProfileData[]) =>
+        prevProfiles.filter((profile) => profile.id !== id)
+      );
+    },
+    [setCardProfiles]
+  );
+
   return (
     <>
       <Header
@@ -39,7 +53,10 @@ export default function CardProfile() {
             />
           }
         />
-        <CardProfileTable data={cardProfileData} />
+        <CardProfileTable
+          data={cardProfiles}
+          deleteCardProfile={deleteCardProfile}
+        />
       </main>
     </>
   );

@@ -11,7 +11,14 @@ interface breadcrumbItem {
   icon?: React.ReactNode;
 }
 
-export default function CreateProfile() {
+export default function EditProfile() {
+  const {
+    formData,
+    handleEditButtonClick,
+    handleInputChange,
+    cardProfileToEdit,
+    setFormData,
+  } = useProfileActions();
   const breadcrumbItems: breadcrumbItem[] = [
     {
       label: "Card Profile",
@@ -29,9 +36,6 @@ export default function CreateProfile() {
     },
   ];
 
-  const { formData, handleInputChange, setFormData, handleCreateButtonClick } =
-    useProfileActions();
-
   return (
     <>
       <Header
@@ -40,21 +44,22 @@ export default function CreateProfile() {
       />
       <main className="w-full px-5 pt-2 pb-5">
         <SectionHeader
-          title="Create Profile"
+          title="Edit Profile"
           description="Fill in profile details and add card fee."
         />
         <div className="mt-6">
           <ProfileDetailsForm
+            cardProfile={cardProfileToEdit}
             formData={formData}
             handleInputChange={handleInputChange}
             setFormData={setFormData}
           />
           <FeesTable />
           <button
-            onClick={handleCreateButtonClick}
             type="button"
+            onClick={handleEditButtonClick}
             className="fee-btn-primary button-default mt-[35px] w-[293px]">
-            Create Profile
+            Edit Profile
           </button>
         </div>
       </main>
