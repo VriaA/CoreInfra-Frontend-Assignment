@@ -21,6 +21,7 @@ This project is a take-home assignment based on the provided Figma design: [Figm
 4. **Recharts** – Data visualization
 5. **UUID** – Unique ID generation
 6. **TypeScript** – Type safety in development
+7. **vite-plugin-svgr** - To transform SVG images into React components. 
 
 ### 🏗  Project Structure
 This project follows a structured folder organization for maintainability:
@@ -29,7 +30,7 @@ This project follows a structured folder organization for maintainability:
 - **hooks/** – Custom hooks for reusable logic
 - **context/** – Global state management using React Context API
 - **layouts/** – Shared layouts like headers and sidebars
-- **public/** – Static assets (fonts, and constants)
+- **public/** – Static assets (fonts)
 - **Routing** – Uses React Router for navigation
 
 ## Getting Started
