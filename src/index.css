@@ -4,6 +4,16 @@
   scrollbar-color: #bebebe transparent;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 @font-face {
   font-family: "Satoshi";
   font-style: normal;
@@ -27,4 +37,12 @@
 
 .date-text {
   @apply font-satoshi text-[11px] text-[#121212];
+}
+
+.button-default {
+  @apply cursor-pointer transition-all duration-300 hover:scale-105;
+}
+
+.fee-btn-primary {
+  @apply font-satoshi cursor-pointer gap-2 rounded-[4px] bg-[#014daf] px-4.5 py-2.5 text-center text-base leading-6 font-bold text-white;
 }

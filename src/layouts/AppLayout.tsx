@@ -7,7 +7,7 @@ export default function AppLayout() {
     <AppContextProvider>
       <div className="flex">
         <NavBar />
-        <div className="flex-1">
+        <div className="min-h-svh w-full flex-1 bg-[#F8FBFF]">
           <Outlet />
         </div>
       </div>
