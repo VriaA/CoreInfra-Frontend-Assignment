@@ -1,7 +1,7 @@
 import CloseIcon from "../../../assets/icons/close.svg?react";
 import BoxedPlusIcon from "../../../assets/icons/boxed_plus.svg?react";
 import AddFeeForm from "./AddFeeForm";
-
+import IconSquare from "../../../components/IconSquare";
 interface AddFeeModalProps {
   onClose: () => void;
 }
@@ -16,9 +16,9 @@ export default function AddFeeModal({ onClose }: AddFeeModalProps) {
       className="m-auto my-7 h-fit w-full rounded-[10px] bg-white p-6 sm:my-[128px] sm:w-fit"
       onClick={handleModalClick}>
       <div className="flex w-full items-center gap-4 border-b border-[#EAECF0] pb-[21px]">
-        <div className="rounded-[10px] border border-[#EAECF0] bg-white p-3 shadow-[0px_1px_2px_#10182805]">
+        <IconSquare>
           <BoxedPlusIcon />
-        </div>
+        </IconSquare>
 
         <div className="flex w-full items-start gap-1">
           <div className="w-full">
