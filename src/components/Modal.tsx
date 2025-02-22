@@ -36,7 +36,11 @@ export default function Modal({
         {...(canCloseOnClickOutside && {
           onClick: onClose,
         })}>
-        <div onClick={(e) => e.stopPropagation()}>{children}</div>
+        <div
+          className="m-auto w-fit"
+          onClick={(e) => e.stopPropagation()}>
+          {children}
+        </div>
       </div>
     </FocusLock>,
     document.body
