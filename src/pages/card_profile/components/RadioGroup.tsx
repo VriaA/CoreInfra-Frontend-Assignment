@@ -30,7 +30,7 @@ export default function RadioGroup({
         {options.map((option) => (
           <label
             key={option.name}
-            className="font-satoshi font-regular flex gap-[9px] text-base leading-6 text-[#121212]">
+            className={`${groupName === "currency" ? "opacity-45" : "opacity-100"} font-satoshi font-regular flex gap-[9px] text-base leading-6 text-[#121212]`}>
             <input
               type="radio"
               name={option.name}
@@ -38,7 +38,7 @@ export default function RadioGroup({
               value={option.name}
               checked={selected === option.name}
               onChange={(e) => onChange(e, groupName)}
-              className="h-6 w-6 accent-[#014DAF]"
+              className="h-6 w-6 rounded-full border border-[#000000]/56 bg-[#F6F6F6]"
             />
             {option.label}
           </label>
