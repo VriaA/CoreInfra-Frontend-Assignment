@@ -104,6 +104,7 @@ export default function AddFeeForm() {
         label="Account"
         formData={formData}
         handleInputChange={handleInputChange}
+        maxLength={10}
       />
     </form>
   );

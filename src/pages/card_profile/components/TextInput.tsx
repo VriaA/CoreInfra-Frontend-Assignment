@@ -9,6 +9,7 @@ interface TextInputProps {
   placeholder?: string;
   pattern?: string;
   maxLength?: number;
+  inputmode?: string;
 }
 
 export default function TextInput({

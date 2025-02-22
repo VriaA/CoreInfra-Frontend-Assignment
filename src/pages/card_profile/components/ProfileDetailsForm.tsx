@@ -45,6 +45,8 @@ export default function ProfileDetailsForm({
             formData={formData}
             handleInputChange={handleInputChange}
             placeholder="00000000"
+            maxLength={8}
+            pattern="\d*"
           />
 
           <DropDownMenu
