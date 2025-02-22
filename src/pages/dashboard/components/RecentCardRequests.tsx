@@ -1,6 +1,6 @@
-import StatusBadge from "./StatusBadge";
-import MaximizeIcon from "../assets/icons/maximize.svg?react";
-import { recentCardRequests } from "../constants/recentCardRequests";
+import StatusBadge from "../../../components/StatusBadge";
+import MaximizeIcon from "../../../assets/icons/maximize.svg?react";
+import { recentCardRequests } from "../../../constants/recentCardRequests";
 import { Link } from "react-router";
 
 export default function RecentCardRequests() {

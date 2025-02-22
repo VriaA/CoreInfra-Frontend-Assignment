@@ -1,12 +1,15 @@
 import { analyticsCards } from "../../../constants/analyticsData";
 import AnalyticsCard from "./AnalyticsCard";
 import { weeklyIncomeData } from "../../../constants/WeeklyIncomeData";
-import CardStatusDistribution from "./CardStatusDistribution";
 import { cardStatusData } from "../../../constants/cardStatusData";
-import WeeklyIncome from "./WeeklyIncome";
-import MonthlyIssuance from "./MonthlyIssuance";
+import { lazy, Suspense } from "react";
 import { monthlyData } from "../../../constants/MonthlyIssuanceData";
-import RecentCardRequests from "../../../components/RecentCardRequests";
+import DashBoardLoadingSpinner from "../../../components/DashBoardLoadingSpinner";
+import RecentCardRequests from "./RecentCardRequests";
+
+const WeeklyIncome = lazy(() => import("./WeeklyIncome"));
+const MonthlyIssuance = lazy(() => import("./MonthlyIssuance"));
+const CardStatusDistribution = lazy(() => import("./CardStatusDistribution"));
 
 export default function Analytics() {
   return (
@@ -27,16 +30,32 @@ export default function Analytics() {
       </div>
       <div className="mt-2 flex w-full flex-col gap-2 sm:flex-row">
         <div className="flex w-full flex-col gap-2 sm:w-[calc(50%-4px)]">
-          <MonthlyIssuance data={monthlyData} />
-          <WeeklyIncome data={weeklyIncomeData} />
+          <Suspense
+            fallback={
+              <DashBoardLoadingSpinner loaderDimensions="max-h-[318px] min-h-[290px]" />
+            }>
+            <MonthlyIssuance data={monthlyData} />
+          </Suspense>
+          <Suspense
+            fallback={
+              <DashBoardLoadingSpinner loaderDimensions="max-h-[290px] min-h-[290px]" />
+            }>
+            <WeeklyIncome data={weeklyIncomeData} />
+          </Suspense>
         </div>
 
         <div className="flex w-full flex-col gap-2 sm:w-[calc(50%-4px)]">
           <RecentCardRequests />
-          <CardStatusDistribution
-            data={cardStatusData}
-            totalCards={2450}
-          />
+
+          <Suspense
+            fallback={
+              <DashBoardLoadingSpinner loaderDimensions="max-h-[318px] min-h-[290px]" />
+            }>
+            <CardStatusDistribution
+              data={cardStatusData}
+              totalCards={2450}
+            />
+          </Suspense>
         </div>
       </div>
     </section>

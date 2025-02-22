@@ -4,7 +4,6 @@ import {
   CardRequestData,
   CardRequestStatus,
 } from "../constants/cardRequestData";
-import { Outlet } from "react-router";
 
 export type CardRequestContextValues = {
   cardRequests: CardRequestData[];
@@ -18,7 +17,11 @@ export type CardRequestContextValues = {
 export const CardRequestContext =
   createContext<CardRequestContextValues | null>(null);
 
-export default function CardRequestProvider() {
+export default function CardRequestProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [cardRequests, setCardRequests] =
     useState<CardRequestData[]>(cardRequestData);
 
@@ -38,7 +41,7 @@ export default function CardRequestProvider() {
 
   return (
     <CardRequestContext.Provider value={{ cardRequests, updateRequest }}>
-      <Outlet />
+      {children}
     </CardRequestContext.Provider>
   );
 }

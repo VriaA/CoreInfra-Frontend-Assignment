@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { cardProfileData } from "../constants/CardProfileData";
-import { Outlet } from "react-router";
 import { CardProfileData } from "../types/card";
 import { createContext } from "react";
 
@@ -14,13 +13,17 @@ export const CardProfileContext = createContext<CardProfileContextValues>({
   setCardProfiles: () => {},
 });
 
-export default function CardProfileProvider() {
+export default function CardProfileProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [cardProfiles, setCardProfiles] =
     useState<CardProfileData[]>(cardProfileData);
 
   return (
     <CardProfileContext.Provider value={{ cardProfiles, setCardProfiles }}>
-      <Outlet />
+      {children}
     </CardProfileContext.Provider>
   );
 }
