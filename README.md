@@ -1,7 +1,7 @@
 # CoreInfra Frontend Assignment
 This project is a take-home assignment based on the provided Figma design: [Figma Link](https://www.figma.com/design/kxTFknUuQ1J0xiMZKoFmiQ/LAPO-Web-App?node-id=524-10429&t=m2SgNUsprjLS0k80-1).
 #### Live Demo: https://core-infra-frontend-assignment-oyelola-victoria.vercel.app
-![localhost_5173_ (1)](https://github.com/user-attachments/assets/8efe3eb8-00c7-423f-b065-e08508585df6)
+![localhost_5173_ (2)](https://github.com/user-attachments/assets/e3aa8461-e59c-4cf0-b0cd-ceefa0a90b44)
 
 ### Key Screens
 - **Dashboard** – Displays card-related information. 
