@@ -1,10 +1,10 @@
 import Header from "../../components/Header";
 import SectionHeader from "./components/SectionHeader";
-import SearchAndActions from "./components/SearchAndActions";
+import SearchAndActions from "../../components/SearchAndActions";
 import CardProfileIcon from "../../assets/icons/card_profile.svg?react";
 import CardProfileTable from "./components/CardProfileTable";
 import { cardProfileData } from "../../constants/CardProfileData";
-
+import PlusIcon from "../../assets/icons/plus.svg?react";
 export default function CardProfile() {
   return (
     <>
@@ -27,7 +27,18 @@ export default function CardProfile() {
           title="Card Profile"
           description="Create, view and edit card profiles here."
         />
-        <SearchAndActions />
+        <SearchAndActions
+          linkText="Add Profile"
+          linkPath="/card-profile/create"
+          icon={
+            <PlusIcon
+              width={16}
+              height={16}
+              aria-hidden={true}
+              fill="001735"
+            />
+          }
+        />
         <CardProfileTable data={cardProfileData} />
       </main>
     </>
