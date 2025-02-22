@@ -6,6 +6,7 @@ import { lazy, Suspense } from "react";
 import { monthlyData } from "../../../constants/MonthlyIssuanceData";
 import DashBoardLoadingSpinner from "../../../components/DashBoardLoadingSpinner";
 import RecentCardRequests from "./RecentCardRequests";
+import Divider from "../../../assets/divider.svg?react";
 
 const WeeklyIncome = lazy(() => import("./WeeklyIncome"));
 const MonthlyIssuance = lazy(() => import("./MonthlyIssuance"));
@@ -16,9 +17,11 @@ export default function Analytics() {
     <section className="mt-[11px] w-full">
       <h2 className="font-satoshi mb-[10px] flex items-center gap-2 text-lg leading-[27.4px] font-bold text-black">
         Analytics
-        <span
-          className="block w-full border-b-[0.38px] border-[#D0D5DD]"
-          aria-hidden={true}></span>
+        <Divider
+          aria-hidden={true}
+          className="w-full"
+          stroke="#D0D5DD"
+        />
       </h2>
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-4">
         {analyticsCards.map((card, index) => (
