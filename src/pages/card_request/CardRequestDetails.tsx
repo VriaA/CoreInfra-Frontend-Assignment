@@ -2,11 +2,14 @@ import Header from "../../components/Header";
 import CardRequestIcon from "../../assets/icons/card_request.svg?react";
 import SectionHeader from "../card_profile/components/SectionHeader";
 import CardRequestDetailsForm from "./components/CardRequestDetailsForm";
+import { useParams } from "react-router";
+
 export default function CardRequestDetails() {
+  const { id } = useParams();
   return (
     <>
       <Header
-        path="/card-request/:id"
+        path={`/card-request/${id}`}
         hasBreadcrumb={true}
         breadcrumbItems={[
           {
@@ -23,7 +26,7 @@ export default function CardRequestDetails() {
           },
           {
             label: "Request Details",
-            path: "/card-request/:id",
+            path: `/card-request/${id}`,
           },
         ]}
       />
