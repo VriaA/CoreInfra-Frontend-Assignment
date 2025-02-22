@@ -5,7 +5,7 @@ import AppContextProvider from "../contexts/AppContext";
 export default function AppLayout() {
   return (
     <AppContextProvider>
-      <div className="flex">
+      <div className="mx-auto flex max-w-[1536px]">
         <NavBar />
         <div className="min-h-svh w-full flex-1 bg-[#F8FBFF]">
           <Outlet />
