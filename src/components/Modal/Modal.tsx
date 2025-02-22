@@ -36,7 +36,7 @@ export default function Modal({
         {...(canCloseOnClickOutside && {
           onClick: onClose,
         })}>
-        {children}
+        <div onClick={(e) => e.stopPropagation()}>{children}</div>
       </div>
     </FocusLock>,
     document.body
