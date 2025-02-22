@@ -27,7 +27,7 @@ export default function AddFeeModal({ onClose }: AddFeeModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="cursor-pointer"
+            className="btn-animation-default cursor-pointer"
             aria-label="Close modal">
             <CloseIcon
               width={24}
@@ -42,7 +42,7 @@ export default function AddFeeModal({ onClose }: AddFeeModalProps) {
       <div className="border-t border-[#EAECF0] pt-6">
         <button
           type="button"
-          className="fee-btn-primary button-default w-full">
+          className="fee-btn-primary btn-animation-default w-full">
           Add Fee
         </button>
       </div>

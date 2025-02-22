@@ -61,7 +61,7 @@ export default function CardRequestTable() {
               <td className="font-satoshi border border-[#eaecf0] px-6 py-3 text-center">
                 <Link
                   to={`/card-request/${row.id}`}
-                  className="font-satoshi inline-block text-[10px] leading-5 font-bold text-[#014daf]">
+                  className="font-satoshi inline-block text-[10px] leading-5 font-bold text-[#014daf] transition-all duration-300 hover:-translate-y-0.5 hover:text-[#0258c8]">
                   View
                 </Link>
               </td>

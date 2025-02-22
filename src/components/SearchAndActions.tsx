@@ -32,7 +32,7 @@ export default function SearchAndActions({
       {linkPath && (
         <Link
           to={linkPath}
-          className="button-default flex h-9 cursor-pointer items-center justify-center gap-2 rounded bg-[#014daf] px-3.5 py-2">
+          className="btn-animation-default flex h-9 cursor-pointer items-center justify-center gap-2 rounded bg-[#014daf] px-3.5 py-2">
           {icon && icon}
           <span className="font-satoshi text-xs leading-[18px] font-medium text-white">
             {linkText}

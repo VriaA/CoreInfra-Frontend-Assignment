@@ -70,12 +70,12 @@ export default function CardProfileTable({
                   <button
                     onClick={() => deleteCardProfile(row.id)}
                     type="button"
-                    className="button-default cursor-pointer rounded p-2 hover:bg-gray-50">
+                    className="btn-animation-default cursor-pointer rounded p-2 hover:bg-gray-50">
                     <DeleteIcon />
                   </button>
                   <Link
                     to={`/card-profile/edit/${row.id}`}
-                    className="button-default cursor-pointer rounded p-2 hover:bg-gray-50">
+                    className="btn-animation-default cursor-pointer rounded p-2 hover:bg-gray-50">
                     <EditIcon />
                   </Link>
                 </td>

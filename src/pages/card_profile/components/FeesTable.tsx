@@ -38,7 +38,7 @@ export default function FeesTable({ fees = [] }: FeesTableProps) {
         <button
           type="button"
           onClick={openAddFeeModal}
-          className="mb-[11px] flex cursor-pointer items-center justify-center gap-2 rounded-[4px] bg-[#014daf] px-[14px] py-2 text-white hover:opacity-90">
+          className="btn-animation-default mb-[11px] flex cursor-pointer items-center justify-center gap-2 rounded-[4px] bg-[#014daf] px-[14px] py-2 text-white hover:opacity-90">
           <PlusIcon
             width={20}
             height={20}

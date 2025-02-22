@@ -59,7 +59,7 @@ export default function EditProfile() {
           <FeesTable />
           <button
             type="submit"
-            className="fee-btn-primary button-default mt-[35px] w-[293px]">
+            className="fee-btn-primary btn-animation-default mt-[35px] w-[293px]">
             Edit Profile
           </button>
         </form>

@@ -13,6 +13,7 @@ export default function RecentCardRequests() {
           Recent Card Requests
         </h3>
         <Link
+          className="transition-all duration-300 hover:-translate-y-0.5"
           to="/card-request"
           aria-label="View all card requests">
           <MaximizeIcon

@@ -55,14 +55,32 @@ input[type="radio"]:checked::after {
 }
 
 .nav-link {
-  @apply font-satoshi flex w-[206px] items-center gap-3 py-[10px] pl-3 text-xs leading-[18px] tracking-normal;
+  font-family: "Satoshi", sans-serif;
+  display: flex;
+  width: 206px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 10px 12px;
+  font-size: 12px;
+  line-height: 18px;
+
+  transition:
+    transform 0.5s ease,
+    color 0.3s ease,
+    background-color 0.3s ease,
+    fill 0.3s ease,
+    stroke 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: scale(1.03);
 }
 
 .date-text {
   @apply font-satoshi text-[11px] text-[#121212];
 }
 
-.button-default {
+.btn-animation-default {
   @apply cursor-pointer transition-all duration-300 hover:scale-105;
 }
 
@@ -80,6 +98,7 @@ input[type="radio"]:checked::after {
   position: relative;
   animation: pulse 1s linear infinite;
 }
+
 .loader:after {
   content: "";
   position: absolute;

@@ -46,7 +46,7 @@ export default function Header({
           <button
             type="button"
             onClick={goBack}
-            className="flex items-center gap-2 text-[#475467]">
+            className="flex items-center gap-2 text-[#475467] transition-all duration-300 hover:-translate-y-0.5">
             <ChevronLeft className="h-5 w-5 stroke-[#475467]" />
             <span className="font-satoshi text-xs leading-[18px] font-medium">
               Back
@@ -92,14 +92,14 @@ export default function Header({
 
         <button
           type="button"
-          className="button-default flex h-10 w-10 items-center justify-center rounded-md p-[10px]"
+          className="btn-animation-default flex h-10 w-10 items-center justify-center rounded-md p-[10px]"
           aria-label="Notifications">
           <BellIcon />
         </button>
 
         <button
           type="button"
-          className="button-default h-8 w-8"
+          className="btn-animation-default h-8 w-8"
           aria-label="User profile ">
           <AvatarIcon />
         </button>

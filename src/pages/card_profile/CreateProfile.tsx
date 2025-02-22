@@ -54,7 +54,7 @@ export default function CreateProfile() {
           <FeesTable />
           <button
             type="submit"
-            className="fee-btn-primary button-default mt-[35px] w-[293px]">
+            className="fee-btn-primary btn-animation-default mt-[35px] w-[293px]">
             Create Profile
           </button>
         </form>
