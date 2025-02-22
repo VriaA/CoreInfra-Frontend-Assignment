@@ -28,10 +28,12 @@ export default function CardProfileTable({ data }: CardProfileTableProps) {
       <table className="mt-2.5 w-fit overflow-hidden rounded sm:w-full">
         <thead>
           <tr className="bg-[#F9FAFB]">
-            {tableHeaders.map((header) => (
+            {tableHeaders.map((header, index) => (
               <th
                 key={header}
-                className="font-satoshi h-[34px] border border-[#eaecf0] px-6 py-2 text-xs leading-[18px] font-medium text-[#475467]">
+                className={`font-satoshi h-[34px] border border-[#eaecf0] px-6 py-2 text-xs leading-[18px] font-medium text-[#475467] ${
+                  index === 0 ? "text-start" : "text-center"
+                }`}>
                 {header}
               </th>
             ))}
