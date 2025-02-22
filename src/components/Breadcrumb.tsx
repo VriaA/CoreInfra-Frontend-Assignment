@@ -21,7 +21,10 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
           key={item.path}
           className="flex items-center gap-3">
           {index === 0 && item.icon && (
-            <span className="flex h-4 w-4 items-center">{item.icon}</span>
+            <>
+              <span className="flex h-4 w-4 items-center">{item.icon}</span>
+              <ChevronRight className="h-4 w-4 stroke-[#D0D5DD]" />
+            </>
           )}
           <Link
             to={item.path}
@@ -33,7 +36,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
             {item.label}
           </Link>
           {index < items.length - 1 && (
-            <ChevronRight className="h-4 w-4 stroke-[#d0d5dd]" />
+            <ChevronRight className="h-4 w-4 stroke-[#D0D5DD]" />
           )}
         </div>
       ))}
