@@ -6,9 +6,15 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  canCloseOnClickOutside?: boolean;
 }
 
-export default function Modal({ isOpen, onClose, children }: ModalProps) {
+export default function Modal({
+  isOpen,
+  onClose,
+  children,
+  canCloseOnClickOutside = true,
+}: ModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -27,7 +33,9 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
     <FocusLock>
       <div
         className="bg-opacity-80 fixed inset-0 z-50 h-full w-full overflow-auto bg-[#101828]/70 backdrop-blur-sm"
-        onClick={onClose}>
+        {...(canCloseOnClickOutside && {
+          onClick: onClose,
+        })}>
         {children}
       </div>
     </FocusLock>,
