@@ -22,7 +22,7 @@ export default function QuickAction({ action, Icon, link }: CardActionProps) {
         <span className="font-satoshi text-[14px] leading-[18px] font-medium text-[#121212]">
           {action}
         </span>
-        <ChevronRight />
+        <ChevronRight stroke="#808080" />
       </span>
     </Link>
   );
