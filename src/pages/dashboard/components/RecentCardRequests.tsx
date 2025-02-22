@@ -12,7 +12,9 @@ export default function RecentCardRequests() {
         <h3 className="font-satoshi text-lg leading-[18px] font-medium text-[#121212]">
           Recent Card Requests
         </h3>
-        <Link to="/card-request">
+        <Link
+          to="/card-request"
+          aria-label="View all card requests">
           <MaximizeIcon
             width={19.6}
             height={19.6}
