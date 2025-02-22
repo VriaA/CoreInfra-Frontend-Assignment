@@ -42,9 +42,9 @@ input[type="radio"]:checked::after {
   font-weight: 200 700;
   font-display: swap;
   src:
-    url("/fonts/Satoshi-Variable.woff2") format("woff2"),
-    url("/fonts/Satoshi-Variable.woff") format("woff"),
-    url("/fonts/Satoshi-Variable.ttf") format("ttf");
+    url("../public/fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("../public/fonts/Satoshi-Variable.woff") format("woff"),
+    url("../public/fonts/Satoshi-Variable.ttf") format("ttf");
 }
 
 @theme {
